@@ -47,7 +47,7 @@ void setup()
 void loop()
 {
   Input =  ultrasonic.getDistanceCM();
-  Input = Input-tinggi_ember;
+  Input = tinggi_ember-Input;
   Serial.println(Input);
   delay(100);
   double gap = abs(Setpoint-Input); //distance away from setpoint

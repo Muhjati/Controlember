@@ -17,6 +17,9 @@
 #define ECHOPIN 7
 #define PIN_OUTPUT 2
 
+// define tinggi ember
+double tinggi_ember = 35;
+
 //Define Variables we'll be connecting to
 double Setpoint, Input, Output;
 
@@ -44,6 +47,7 @@ void setup()
 void loop()
 {
   Input =  ultrasonic.getDistanceCM();
+  Input = Input-tinggi_ember;
   Serial.println(Input);
   delay(100);
   double gap = abs(Setpoint-Input); //distance away from setpoint
